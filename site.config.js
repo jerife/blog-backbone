@@ -11,16 +11,16 @@ const CONFIG = {
     instagram: "",
   },
   projects: [
-    // {
-    //   name: `morethan-log`,
-    //   href: "https://github.com/morethanmin/morethan-log",
-    // },
+    {
+      name: `github-blog`,
+      href: "https://jerife.github.io",
+    },
   ],
   // blog setting (required)
   blog: {
     title: "jerife",
     description: "welcome to jerife blog!",
-    scheme: "system", // 'light' | 'dark' | 'system'
+    scheme: "auto", // 'light' | 'dark' | 'system'
   },
 
   // CONFIG configration (required)
