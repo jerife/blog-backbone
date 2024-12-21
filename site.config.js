@@ -12,15 +12,15 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `github-blog`,
-      href: "https://jerife.github.io",
+      name: `Multimodal Intelligence Research Lab`,
+      href: "https://mirlab.yonsei.ac.kr",
     },
   ],
   // blog setting (required)
   blog: {
     title: "jerife",
     description: "welcome to jerife blog!",
-    scheme: "auto", // 'light' | 'dark' | 'system'
+    scheme: "light", // 'light' | 'dark' | 'system'
   },
 
   // CONFIG configration (required)
