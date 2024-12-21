@@ -4,7 +4,7 @@ const CONFIG = {
     name: "Jerife",
     image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app // https://studio.creativefabrica.com/vectorizer
     role: "AI Research Engineer",
-    bio: "Interested in Multi-modal LLM",
+    bio: "Exploring Multi-modal AI",
     email: "jerife@naver.com",
     linkedin: "jerife",
     github: "jerife",
@@ -29,7 +29,6 @@ const CONFIG = {
   lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
 
-  // 1630a1c9eb28803ca9c7f765010802e9
   // notion configuration (required)
   notionConfig: {
     pageId: process.env.NOTION_PAGE_ID,
@@ -37,13 +36,13 @@ const CONFIG = {
 
   // plugin configuration (optional)
   googleAnalytics: {
-    enable: false,
+    enable: true,
     config: {
       measurementId: process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID || "",
     },
   },
   googleSearchConsole: {
-    enable: false,
+    enable: true,
     config: {
       siteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
     },
@@ -55,10 +54,11 @@ const CONFIG = {
     },
   },
   utterances: {
-    enable: false,
+    enable: true,
     config: {
-      repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "jerife/blog-backbone",
+      repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "",
       "issue-term": "og:title",
+      theme: "preferred-color-scheme",
       label: "💬 Utterances",
     },
   },
