@@ -2,9 +2,9 @@ const CONFIG = {
   // profile setting (required)
   profile: {
     name: "Jerife",
-    image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app // https://studio.creativefabrica.com/vectorizer
     role: "AI Research Engineer",
-    bio: "Interested in Multimoal LLM",
+    bio: "Interested in Multi-modal LLM",
     email: "jerife@naver.com",
     linkedin: "jerife",
     github: "jerife",
