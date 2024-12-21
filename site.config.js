@@ -1,10 +1,10 @@
 const CONFIG = {
   // profile setting (required)
   profile: {
-    name: "jerife",
+    name: "Jerife",
     image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "AI Research Engineer",
-    bio: "I research multi-modal AI.",
+    bio: "Interested in Multimoal LLM",
     email: "jerife@naver.com",
     linkedin: "jerife",
     github: "jerife",
@@ -12,15 +12,15 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `Multimodal Intelligence Research Lab`,
+      name: `Yonsei MIR Lab`,
       href: "https://mirlab.yonsei.ac.kr",
     },
   ],
   // blog setting (required)
   blog: {
-    title: "jerife",
+    title: "Jerife",
     description: "welcome to jerife blog!",
-    scheme: "light", // 'light' | 'dark' | 'system'
+    scheme: "system", // 'light' | 'dark' | 'system'
   },
 
   // CONFIG configration (required)
@@ -29,6 +29,7 @@ const CONFIG = {
   lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
 
+  // 1630a1c9eb28803ca9c7f765010802e9
   // notion configuration (required)
   notionConfig: {
     pageId: process.env.NOTION_PAGE_ID,
@@ -56,7 +57,7 @@ const CONFIG = {
   utterances: {
     enable: false,
     config: {
-      repo: "morethanmin/morethan-log",
+      repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "jerife/blog-backbone",
       "issue-term": "og:title",
       label: "💬 Utterances",
     },
@@ -69,7 +70,7 @@ const CONFIG = {
     },
   },
   isProd: process.env.VERCEL_ENV === "production", // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
-  revalidateTime: 21600 * 7, // revalidate time for [slug], index
+  revalidateTime: 1, // revalidate time for [slug], index
 }
 
 module.exports = { CONFIG }
