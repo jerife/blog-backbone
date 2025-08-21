@@ -11,10 +11,10 @@ const CONFIG = {
     instagram: "",
   },
   projects: [
-    // {
-    //   name: `Yonsei MIR Lab`,
-    //   href: "https://mirlab.yonsei.ac.kr",
-    // },
+    {
+      name: `Multimodal Intelligence Research Lab`,
+      href: "https://mirlab.yonsei.ac.kr",
+    },
   ],
   // blog setting (required)
   blog: {
