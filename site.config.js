@@ -10,12 +10,12 @@ const CONFIG = {
     github: "jerife",
     instagram: "",
   },
-  // projects: [
-  //   {
-  //     name: `Yonsei MIR Lab`,
-  //     href: "https://mirlab.yonsei.ac.kr",
-  //   },
-  // ],
+  projects: [
+    // {
+    //   name: `Yonsei MIR Lab`,
+    //   href: "https://mirlab.yonsei.ac.kr",
+    // },
+  ],
   // blog setting (required)
   blog: {
     title: "Jerife",
