@@ -4,23 +4,23 @@ const CONFIG = {
     name: "Jerife",
     image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app // https://studio.creativefabrica.com/vectorizer
     role: "AI Research Engineer",
-    bio: "Exploring Multi-Modal AI",
+    bio: "Exploring multimodal language models",
     email: "jerife@naver.com",
     linkedin: "jerife",
     github: "jerife",
     instagram: "",
   },
-  projects: [
-    {
-      name: `Yonsei MIR Lab`,
-      href: "https://mirlab.yonsei.ac.kr",
-    },
-  ],
+  // projects: [
+  //   {
+  //     name: `Yonsei MIR Lab`,
+  //     href: "https://mirlab.yonsei.ac.kr",
+  //   },
+  // ],
   // blog setting (required)
   blog: {
     title: "Jerife",
     description: "welcome to jerife blog!",
-    scheme: "light", // 'light' | 'dark' | 'system'
+    scheme: "system", // 'light' | 'dark' | 'system'
   },
 
   // CONFIG configration (required)
