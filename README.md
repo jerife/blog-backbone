@@ -139,6 +139,8 @@ Sponsors template:
 <a href="https://github.com/siyeons"><img src="https://avatars.githubusercontent.com/u/35549653?v=4" width="50px" alt="siyeons" /></a>&nbsp;&nbsp;
 </p>
 
+Simply empty the Blog Database and modify site.config.js and commit the changes
+
 ## License
 
 The [MIT License](LICENSE).
