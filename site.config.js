@@ -20,7 +20,7 @@ const CONFIG = {
   blog: {
     title: "Jerife",
     description: "welcome to jerife blog!",
-    scheme: "light", // 'light' | 'dark' | 'system'
+    scheme: "light", // 'light' | 'dark'
   },
 
   // CONFIG configration (required)
@@ -36,13 +36,13 @@ const CONFIG = {
 
   // plugin configuration (optional)
   googleAnalytics: {
-    enable: true,
+    enable: false,
     config: {
       measurementId: process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID || "",
     },
   },
   googleSearchConsole: {
-    enable: true,
+    enable: false,
     config: {
       siteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
     },
