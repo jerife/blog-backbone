@@ -12,7 +12,7 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `Multimodal Intelligence Research Lab`,
+      name: "Multimodal Intelligence Research Lab",
       href: "https://mirlab.yonsei.ac.kr",
     },
   ],
