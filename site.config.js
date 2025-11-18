@@ -12,15 +12,15 @@ const CONFIG = {
   },
   projects: [
     {
-      name: "Multimodal Intelligence Research Lab",
-      href: "https://mirlab.yonsei.ac.kr",
+      name: "Yonsei Language & AGI Lab",
+      href: "https://langlab.yonsei.ac.kr",
     },
   ],
   // blog setting (required)
   blog: {
     title: "Jerife",
     description: "welcome to jerife blog!",
-    scheme: "light", // 'light' | 'dark'
+    scheme: "dark", // 'light' | 'dark'
   },
 
   // CONFIG configration (required)
