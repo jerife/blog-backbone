@@ -12,8 +12,8 @@ const CONFIG = {
   },
   projects: [
     {
-      name: "Yonsei Language & AGI Lab",
-      href: "https://langlab.yonsei.ac.kr",
+      name: "Yonsei University",
+      href: "https://www.yonsei.ac.kr",
     },
   ],
   // blog setting (required)
