@@ -18,10 +18,6 @@ export const getPosts = async () => {
   const response = await api.getPage(id)
   id = idToUuid(id)
 
-  console.log("=== DEBUG keys ===", Object.keys(response))
-  console.log("=== DEBUG block[id] ===", JSON.stringify(response.block[id], null, 2)?.slice(0, 2000))
-  console.log("=== DEBUG collection ===", JSON.stringify(Object.values(response.collection)[0], null, 2)?.slice(0, 2000))
-
   const collection = (Object.values(response.collection)[0]?.value as any)?.value
   const block = response.block
   const schema = collection?.schema
@@ -38,21 +34,29 @@ export const getPosts = async () => {
     // Construct Data
     const pageIds = getAllPageIds(response, undefined, rawMetadata?.content)
     const data = []
-    console.log("=== DEBUG pageIds ===", pageIds?.length, pageIds?.slice(0, 3))
+
     for (let i = 0; i < pageIds.length; i++) {
-      const id = pageIds[i]
-      if (!block[id]?.value) {
-        console.log("=== DEBUG missing block ===", id)
-        continue
+      const pageId = pageIds[i]
+
+      // Fetch child page individually if not in initial response
+      if (!block[pageId]?.value) {
+        try {
+          const pageResponse = await api.getPage(pageId)
+          Object.assign(block, pageResponse.block)
+        } catch (e) {
+          continue
+        }
       }
-      const properties = (await getPageProperties(id, block, schema)) || null
+      if (!block[pageId]?.value) continue
+
+      const properties = (await getPageProperties(pageId, block, schema)) || null
       if (!properties) continue
       // Add fullwidth, createdtime to properties
       properties.createdTime = new Date(
-        (block[id].value as any)?.value?.created_time
+        (block[pageId].value as any)?.value?.created_time
       ).toString()
       properties.fullWidth =
-        (block[id].value as any)?.value?.format?.page_full_width ?? false
+        (block[pageId].value as any)?.value?.format?.page_full_width ?? false
 
       data.push(properties)
     }
