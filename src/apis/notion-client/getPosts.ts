@@ -16,7 +16,6 @@ export const getPosts = async () => {
   const api = new NotionAPI()
 
   const response = await api.getPage(id)
-  console.log("=== DEBUG collection_query ===", JSON.stringify(response.collection_query, null, 2)?.slice(0, 3000))
   id = idToUuid(id)
   const collection = (Object.values(response.collection)[0]?.value as any)?.value
   const block = response.block
@@ -32,7 +31,7 @@ export const getPosts = async () => {
     return []
   } else {
     // Construct Data
-    const pageIds = getAllPageIds(response)
+    const pageIds = getAllPageIds(response, undefined, rawMetadata?.content)
     const data = []
     for (let i = 0; i < pageIds.length; i++) {
       const id = pageIds[i]
