@@ -68,7 +68,8 @@ export const getPosts = async () => {
       return dateB - dateA
     })
 
-    const posts = data as TPosts
+    // Replace undefined with null for Next.js serialization
+    const posts = JSON.parse(JSON.stringify(data, (_, v) => v === undefined ? null : v)) as TPosts
     return posts
   }
 }
