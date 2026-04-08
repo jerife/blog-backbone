@@ -17,11 +17,16 @@ export const getPosts = async () => {
 
   const response = await api.getPage(id)
   id = idToUuid(id)
+
+  console.log("=== DEBUG keys ===", Object.keys(response))
+  console.log("=== DEBUG block[id] ===", JSON.stringify(response.block[id], null, 2)?.slice(0, 2000))
+  console.log("=== DEBUG collection ===", JSON.stringify(Object.values(response.collection)[0], null, 2)?.slice(0, 2000))
+
   const collection = (Object.values(response.collection)[0]?.value as any)?.value
   const block = response.block
   const schema = collection?.schema
 
-  const rawMetadata = (block[id].value as any)?.value
+  const rawMetadata = (block[id]?.value as any)?.value
 
   // Check Type
   if (
@@ -33,9 +38,15 @@ export const getPosts = async () => {
     // Construct Data
     const pageIds = getAllPageIds(response, undefined, rawMetadata?.content)
     const data = []
+    console.log("=== DEBUG pageIds ===", pageIds?.length, pageIds?.slice(0, 3))
     for (let i = 0; i < pageIds.length; i++) {
       const id = pageIds[i]
+      if (!block[id]?.value) {
+        console.log("=== DEBUG missing block ===", id)
+        continue
+      }
       const properties = (await getPageProperties(id, block, schema)) || null
+      if (!properties) continue
       // Add fullwidth, createdtime to properties
       properties.createdTime = new Date(
         (block[id].value as any)?.value?.created_time
